@@ -1,2 +1,12 @@
 <p>search works!</p>
-<button (click)="getBooks()">get some books</button>
+<form>
+  <h1>"What kind of books re you looking for?</h1>
+
+  <!-- author title -->
+</form>
+<button (click)="getBookList()">get some books</button>
+
+<div *ngFor="let book of bookList; index as i">
+  <h1>{{ bookList[i].title }}</h1>
+  <!-- <h2>{{ book.author }}</h2> -->
+</div>

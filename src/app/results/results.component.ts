@@ -13,5 +13,6 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
+    console.log('we are here');
   }
 }

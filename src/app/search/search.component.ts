@@ -7,19 +7,29 @@ import { BookService } from '../services/book.service';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
+  bookList: any[] = [1, 2, 3];
+
   constructor(private router: Router, private bookService: BookService) {}
 
-  books: any = 'working';
+  getBookList() {
+    // this.bookService.getBookList.subscribe(data => {
+    //   this.bookList = data.results;
+    //   this.bookService.setBooks(this.bookList);
+    //   console.log(this.bookList);
+    //   this.router.navigate(["results"]);
 
-  getBooks() {
-    // console.log(this.books);
-    this.bookService.getBooks().subscribe((books) => (this.books = books));
-    console.log(this.books);
+    console.log(this.bookList);
+    this.bookService
+      .getBookList()
+      .subscribe((data) => (this.bookList = data.results));
+    console.log(this.bookList);
+    this.bookService.setBooks(this.bookList);
 
-    // this.router.navigate(["results"])
+    // this.router.navigate(['results']);
   }
   displayBooks() {
-    console.log(this.books);
+    console.log(this.bookList);
   }
-  ngOnInit(): void {}
+
+  ngOnInit() {}
 }

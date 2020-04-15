@@ -9,6 +9,7 @@ const routes: Routes = [
     path: '',
     component: SearchComponent,
   },
+  { path: 'results', component: ResultsComponent },
 ];
 
 @NgModule({
